@@ -1,16 +1,55 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 10px === 1rem */
+}
+
+body {
+  --desktop-width: 1440px;
+  --mobile-width: 375px;
+  --body-text-home: 1.4rem;
+  --body-text-detail: 1.6rem;
+
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: var(--body-text-home);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: var(--theme-text);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.light {
+  --theme-element: #FFFFFF;
+  --theme-background: #FAFAFA;
+  --theme-text: #111517;
+  --theme-input: #858585;
+}
+
+.dark {
+  --theme-element: #2B3945;
+  --theme-background: #202C37;
+  --theme-text: #FFFFFF;
+}
+
+.container {
+  --desktop-width: 1440px;
 }

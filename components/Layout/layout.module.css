@@ -1,0 +1,9 @@
+.app {
+  background: var(--theme-background);
+  color: var(--theme-text);
+  min-height: 100vh;
+}
+
+.container {
+  padding-top: 80px;
+}
