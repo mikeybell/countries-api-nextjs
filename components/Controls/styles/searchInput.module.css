@@ -1,0 +1,21 @@
+.container {
+  width: 40%;
+}
+
+.input {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 3px;
+  background: var(--theme-element);
+  color: var(--theme-text);
+  font-size: var(--body-text-home);
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+@media all and (max-width: 500px) {
+  .container {
+    width: 100%;
+    display: flex;
+  }
+}

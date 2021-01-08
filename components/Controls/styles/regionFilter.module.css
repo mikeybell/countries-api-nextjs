@@ -1,0 +1,61 @@
+.container {
+  position: relative;
+}
+
+.toggleButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--theme-element);
+  border: none;
+  border-radius: 3px;
+  padding: 16px;
+  font-size: var(--body-text-home);
+  cursor: pointer;
+  width: 200px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  color: var(--theme-text)
+}
+
+.buttonGroup {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--theme-element);
+  border-radius: 3px;
+  width: 200px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  padding: 8px 0;
+}
+
+.regionButton {
+  background: var(--theme-element);
+  border: none;
+  padding: 8px 16px;
+  font-size: var(--body-text-home);
+  cursor: pointer;
+  text-align: left;
+  border-radius: 3px;
+  color: var(--theme-text)
+}
+
+.regionButton:hover {
+  background-color: var(--theme-background);
+}
+
+@media all and (max-width: 500px) {
+  .container {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .toggleButton {
+    width: 100%;
+  }
+
+  .buttonGroup {
+    width: 100%;
+  }
+}
