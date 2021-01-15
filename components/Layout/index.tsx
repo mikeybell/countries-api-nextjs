@@ -22,7 +22,6 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className={`${app} ${theme}`}>
       <Head>
-        <html lang="en-US" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={siteTitle} />
         <meta name="og:title" content={siteTitle} />
