@@ -17,6 +17,7 @@ const useSearchInput = ({
       const result = countries.filter(
         (country) => country.name
           .toLowerCase()
+          .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // removes accented characters
           .includes(search.toLocaleLowerCase()),
       );
       setCountriesList(result);

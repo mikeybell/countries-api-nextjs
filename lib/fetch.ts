@@ -25,6 +25,9 @@ export const getAllCountries = async () => {
 };
 
 export const getCountryDataByName = async (name: string) => {
+  // removes accented characters
+  const formmattedName = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
   let result = {
     country: {},
     error: null,
@@ -32,7 +35,7 @@ export const getCountryDataByName = async (name: string) => {
 
   try {
     const res = await fetch(
-      `https://restcountries.eu/rest/v2/name/${name}`,
+      `https://restcountries.eu/rest/v2/name/${formmattedName}`,
     );
     if (!res.ok) throw new Error();
     const data = await res.json();
