@@ -11,10 +11,10 @@ const Card = ({
     container, img, header, info, item, value,
   } = styles;
   const formattedPop = population.toLocaleString('en');
-  const slug = name.replaceAll(' ', '-');
+  // const slug = name.replaceAll(' ', '-');
 
   return (
-    <Link href={`/${slug}`}>
+    <Link href={`/countries/${name}`}>
       <a>
         <article className={container}>
           <img className={img} src={flag} alt={`The flag of ${name}`} />

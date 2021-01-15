@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import { ThemeContext } from '../Layout';
 import BackArrow from '../../public/assets/back_arrow';
 import styles from './styles/backButton.module.css';
 
 const BackButton = () => {
-  const history = useHistory();
+  // const history = useHistory();
   const theme = useContext(ThemeContext);
   const { button, text } = styles;
 
-  const goBack = () => history.goBack();
+  // const goBack = () => history.goBack();
+  const goBack = () => console.log('back');
   const arrowColor = theme === 'light' ? '#000' : '#FFF';
 
   return (

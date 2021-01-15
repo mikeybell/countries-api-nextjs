@@ -10,10 +10,9 @@ interface BorderButtonProps {
 
 const BorderButton = ({ country }: BorderButtonProps) => {
   const { button } = styles;
-  const slug = country.name.replaceAll(' ', '-');
 
   return (
-    <Link href={`/${slug}`}>
+    <Link href={`/${country.name}`}>
       <a className={button}>
         {country.name}
       </a>

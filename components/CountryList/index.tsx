@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import Loader from '../Loader';
-import useGetAllCountries from './hooks/useGetAllCountries';
 import useFilterRegion from '../Controls/hooks/useFilterRegion';
 import useSearchInput from '../Controls/hooks/useSearchInput';
 import SearchInput from '../Controls/SearchInput';
 import { Country } from '../types';
 import styles from './styles/countryList.module.css';
 
-const CountryList = () => {
-  const [countriesList, setCountriesList] = useState<Country[]>([]);
+interface CountryListProps {
+  countries: Country[];
+  error: string;
+}
 
-  const { countries, error } = useGetAllCountries();
+const CountryList = ({ countries, error }: CountryListProps) => {
+  const [countriesList, setCountriesList] = useState<Country[]>([]);
   const { FilterRegion } = useFilterRegion({ countries, setCountriesList });
   const { handleSearchInput } = useSearchInput({ countries, setCountriesList });
 
@@ -21,8 +23,8 @@ const CountryList = () => {
     if (countries) setCountriesList(countries);
   }, [countries]);
 
-  if (error) return <p>{error}</p>;
-  if (countries.length === 0 && !error) return <Loader />;
+  if (error !== null) return <p>{error}</p>;
+  if (countries.length === 0 && error === null) return <Loader />;
 
   return (
     <div className={container}>

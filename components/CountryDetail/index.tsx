@@ -1,19 +1,22 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import useGetCountryByName from './hooks/useGetCountryByName';
-import useGetBorderCountries from './hooks/useGetBorderCountries';
 import BorderCountries from './BorderCountries';
 import BackButton from './BackButton';
 import Loader from '../Loader';
 import getArrayValues from './utils';
 import styles from './styles/countryDetail.module.css';
+import { Country } from '../types';
 
-const CountryDetail = () => {
-  // @ts-ignore
-  const { slug } = useParams();
-  const { country, error } = useGetCountryByName(slug);
-  const { borderCountries } = useGetBorderCountries(country);
+interface CountryDetailProps {
+  borderCountries: Country[];
+  country: Country | null;
+  error: string | null;
+}
 
+const CountryDetail = ({
+  borderCountries,
+  country,
+  error,
+}: CountryDetailProps) => {
   const {
     container,
     infoContainer,
