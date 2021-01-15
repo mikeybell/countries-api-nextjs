@@ -8,7 +8,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export const siteTitle = 'Counties API UI';
+export const siteTitle = 'Countries API UI';
 export const ThemeContext = createContext('');
 
 const Layout = ({ children }: LayoutProps) => {
@@ -22,9 +22,11 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className={`${app} ${theme}`}>
       <Head>
+        <html lang="en-US" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={siteTitle} />
         <meta name="og:title" content={siteTitle} />
+        <title>{siteTitle}</title>
       </Head>
       <ThemeContext.Provider value={theme}>
         <Header toggleTheme={toggleTheme} />
