@@ -12,7 +12,7 @@ const BorderButton = ({ country }: BorderButtonProps) => {
   const { button } = styles;
 
   return (
-    <Link href={`/${country.name}`}>
+    <Link href={`/countries/${country.name}`}>
       <a className={button}>
         {country.name}
       </a>
